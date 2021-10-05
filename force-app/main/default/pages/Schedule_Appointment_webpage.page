@@ -1,0 +1,83 @@
+<apex:page >
+<script
+src="https://https://buildbbd-sisley.cs89.force.com/ScheduleAppointmentTest/lightning/lightning.out.js">
+</script>
+
+<script>
+$Lightning.use("runtime_appointmentbooking:lightningOutGuest",
+function() { // Callback once framework and app load
+$Lightning.createComponent(
+"lightning:flow", // top-level component of your app
+{ }, // attributes to set on the component when created
+"lexcontainer", // the DOM location to insert the component
+function(component) { // API name of the Flow
+component.startFlow(”Guest_Scheduler_Appointment_Flow”);
+}
+);
+}, 'https://buildbbd-sisley.cs89.force.com/ScheduleAppointmentTest/' // Site endpoint
+);
+</script>
+
+  <h1>Inbound Scheduling Page</h1>
+  <br />
+  Schedule an appointment
+  <br />
+
+<style type='text/css'>
+    .embeddedServiceHelpButton .helpButton .uiButton {
+        background-color: #BEA720;
+        font-family: "Helvetica Neu", sans-serif;
+    }
+    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid #BEA720;
+    }
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+        //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+        //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+        // Settings for Field Service
+
+        embedded_svc.settings.enabledFeatures = ['FieldService'];
+        embedded_svc.settings.entryFeature = 'FieldService';
+
+        embedded_svc.settings.useCustomAuthentication = false;
+        embedded_svc.settings.loginClientId = '3MVG9sSN_PMn8tjQiBUSYhwTYwxCRxErxhPHxjyVKM0hDHsWYlOVue2sBUf7_Bgf9gW2r_UyRBLU9IcVQRfSp';
+        embedded_svc.settings.loginRedirectURL = 'https://buildbbd-chatbuildbbd.cs89.force.com/CallBackPage';
+        embedded_svc.settings.loginTargetQuerySelector = '#salesforce-login';
+        embedded_svc.settings.authenticationStartLabel = 'GREAT CA MARCHE';
+
+        embedded_svc.init(
+            'https://sisley--buildbbd.my.salesforce.com',
+            'https://buildbbd-chatbuildbbd.cs89.force.com/SchedulerFlowTest',
+            gslbBaseURL,
+            '00D0E000000EEXp',
+            'Inbound_Appointment',
+            {
+                
+            }
+        );
+    };
+
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://sisley--buildbbd.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    } else {
+        initESW('https://service.force.com');
+    }
+</script>
+
+</apex:page>

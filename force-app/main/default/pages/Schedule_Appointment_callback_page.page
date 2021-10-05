@@ -1,0 +1,14 @@
+<apex:page >
+
+<html>
+<head>
+<meta name="salesforce-community" content="https://buildbbd-sisley.cs89.force.com/ScheduleAppointmentTest"></meta>
+<meta name="salesforce-mode" content="popup-callback"></meta>
+<meta name="salesforce-save-access-token" content="true"></meta>
+<meta name="salesforce-allowed-domains" content="https://buildbbd-chatbuildbbd.cs89.force.com"></meta>
+<script src="https://buildbbd-sisley.cs89.force.com/ScheduleAppointmentTest/servlet/servlet.loginwidgetcontroller?type=javascript_widget" async="true" defer="true"></script>
+</head>
+<body></body>
+</html>
+
+</apex:page>

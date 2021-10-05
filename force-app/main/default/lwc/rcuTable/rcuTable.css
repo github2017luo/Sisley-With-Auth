@@ -1,0 +1,21 @@
+.title {
+    background: #fff;
+    text-align: right;
+    padding: 10px;
+    font-size: larger;
+}
+
+.actions {
+    text-align: center;
+    padding: 10px;
+}
+
+
+table  {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.slds-card__header-title {
+    padding: 10px;
+}

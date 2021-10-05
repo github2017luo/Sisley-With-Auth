@@ -1,0 +1,14 @@
+<!--controller => apex class name  -->
+<aura:component controller="API_Star_RCU_Service" implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,lightning:availableForFlowScreens" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <c:rcuTable  recordId="{!v.recordId}"/> 
+
+    <aura:html tag="style">
+        .slds-modal__container {
+            width: 90%;
+            max-width: 1600px;
+            min-width: 640px;
+        }
+      </aura:html>  
+</aura:component>

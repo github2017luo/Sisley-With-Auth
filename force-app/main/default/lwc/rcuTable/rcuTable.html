@@ -1,0 +1,67 @@
+<template>
+    <lightning-card variant="Narrow">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered  slds-table_striped">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <!-- Checkbox -->
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Typical Column Header"></div>
+                    </th>
+                    <!-- Columns -->
+                    <template for:each={columnNames} for:item="clmn">
+                        <th class="" scope="col" key={clmn.FieldName}>
+                            <div class="slds-truncate" title="Typical Column Header">{clmn.FieldName}</div>
+                        </th>
+                    </template>
+                </tr>
+            </thead>
+            <tbody>
+
+                <template for:each={data} for:item="d">
+                    <tr class="slds-hint-parent" key={d.Id}>
+                        <td>
+                            <lightning-input type="checkbox" checked={d.Presence__c} onchange={handleCheckboxChange} data-id={d.Id}></lightning-input>
+                        </td>
+                        <td>
+                            <a class="slds-truncate">{d.Id}</a>
+                        </td>
+                        <td>
+                            <a class="slds-truncate">{d.FirstName}</a>
+                        </td>
+                        <td>
+                            <a class="slds-truncate">{d.LastName}</a>
+                        </td>
+                        <td>
+                            <a class="slds-truncate">{d.Email}</a>
+                        </td>
+                        <td>
+                            <a class="slds-truncate">{d.Phone}</a>
+                        </td>
+                        <td>
+                            <lightning-formatted-time value={d.Birthdate}></lightning-formatted-time>
+                        </td>
+                        <td>
+                            <a class="slds-truncate">{d.City}</a>
+                        </td>
+                    </tr>
+                </template>
+
+            </tbody>
+
+
+
+        </table>
+
+        <div class="actions">
+            <lightning-button label="Sync" title="Non-primary action" variant="brand" onclick={handleSync}
+                class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </lightning-card>
+
+    <template if:true={isLoading}>
+        <div class="spinner">
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+    </template>
+
+</template>

@@ -1,0 +1,8 @@
+<apex:page controller="API_Star_RCU_Service" action="{!initOauth}">
+
+    <apex:form >
+        <!--<apex:commandButton action="{!testAPI}" value="testAPI"/>-->
+    </apex:form>	
+
+    {!log}
+</apex:page>

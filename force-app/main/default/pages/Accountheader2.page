@@ -1,0 +1,28 @@
+<apex:page standardController="Account">
+ <div class="c-container">
+ <div class="custom-box" flexibility="auto" padding="around-small"><apex:outputLabel value="{!$ObjectType.Account.fields.Name.Label}" /> <br></br><apex:outputField value="{! Account.Name }"/></div>
+ <div class="custom-box" flexibility="auto" padding="around-small"><apex:outputLabel value="{!$ObjectType.Account.fields.PersonEmail.Label}" /> <br></br><apex:outputField value="{! Account.PersonEmail }"/></div>
+ <div class="custom-box" flexibility="auto" padding="around-small"><apex:outputLabel value="{!$ObjectType.Account.fields.Phone.Label}" /> <br></br><apex:outputField value="{! Account.PersonMobilePhone }"/></div>
+ <div class="custom-box" flexibility="auto" padding="around-small"><apex:outputField value="{! Account.Date_Dernier_Achat__pc }"/></div>
+ </div>
+<style>
+.custom-box {
+    text-align: center;
+    background-color: #f4f6f9;
+    border: 1px solid #d8dde6;
+    background-image: url("https://sisley--buildbbd--c.visualforce.com/resource/1624365278000/Menu_header?");
+    background-repeat:repeat;
+    background-position: center;
+    background-size: 100% auto;
+    font-size: 20px;
+} 
+
+.c-container {
+  
+   display: grid;
+   grid-gap: 1rem;
+   grid-template-columns:  repeat(4, 200px);   
+   grid-template-rows: repeat(1, 65px);
+}
+</style>
+</apex:page>

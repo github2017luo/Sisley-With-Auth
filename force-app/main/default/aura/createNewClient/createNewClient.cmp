@@ -1,0 +1,80 @@
+<aura:component controller="API_Star_RCU_Service" implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,lightning:availableForFlowScreens,flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <!-- <c:rcuTable  recordId="{!v.recordId}"/>  -->
+    <aura:html tag="style">
+
+        .slds-modal__container {
+            width: 90%;
+            max-width: 1600px;
+            min-width: 640px;
+        }
+
+        .slds-grid {
+            display: inline;
+        }
+        
+
+        .slds-card_body {
+            display: inline;
+        }
+        
+        .slds-modal__content {
+            min-height: 700px;   
+            overflow-y: scroll;
+            padding:0;
+        }
+
+        .slds-modal__close {
+            top: -2rem;
+            right: 0rem;
+        }
+
+        .div_modal_header {
+            position: absolute;
+            top: 0;
+            height: 65px;
+            width: 100%;
+        }
+
+        .div_modal_content {
+            position: absolute;
+            top: 65px;
+            bottom: 65px;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .div_modal_footer {
+            position: absolute;
+            bottom: 0;
+            height: 65px;
+            width: 100%;
+        }
+
+     
+
+        .slds-p-around_medium {
+            padding:20px; 
+        }
+
+  
+
+        .div_modal {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .slds-align_absolute-center, .slds-align--absolute-center {
+            display: inline-block;
+        }
+
+        .slds-modal__footer {
+            display: none;
+        }
+
+    
+    </aura:html>
+</aura:component>

@@ -1,0 +1,86 @@
+<apex:page standardController="Account">
+<div class="c-container0">
+ <div class="custom-box0" flexibility="auto" padding="around-small"><apex:outputLabel value="Date of last activity" for="Account.Date_of_last_activity__pc"/></div>
+ <div class="custom-box0" flexibility="auto" padding="around-small"><apex:outputLabel value="Average basket" for="Account.Average_basket__c"/></div>
+ <div class="custom-box0" flexibility="auto" padding="around-small"> <apex:outputLabel value="Loyalty Program" for="Account.Loyalty_Program__c"/> </div>
+ <div class="custom-box0" flexibility="auto" padding="around-small"> <apex:outputLabel value="Date of last Purchase" for="Account.Date_Dernier_Achat__pc"/>
+ </div>
+ </div>
+ <div class="c-container">
+ <div class="custom-box1" flexibility="auto" padding="around-small"><apex:outputField value="{! Account.Date_of_last_activity__pc }"/></div>
+ <div class="custom-box2" flexibility="auto" padding="around-small"><apex:outputField value="{! Account.Average_basket__c }"/></div>
+ <div class="custom-box3" flexibility="auto" padding="around-small"><apex:outputField value="{! Account.Loyalty_Program__c }"/><br></br><apex:outputField value="{! Account.Loyalty_Status__c }"/></div>
+ <div class="custom-box4" flexibility="auto" padding="around-small"><apex:outputField value="{! Account.Date_Dernier_Achat__pc }"/></div>
+ </div>
+<style>
+
+
+.custom-box1 {
+    text-align: center;
+    background-color: #49a096;
+    border: 1px solid #d8dde6;
+    background-repeat:repeat;
+    background-position: center;
+    background-size: 100% auto;
+    font-size: 19px;
+    padding-top: 10px; 
+} 
+.custom-box2 {
+    text-align: center;
+    background-color: #86BBB2;
+    border: 1px solid #d8dde6;
+    background-repeat:repeat;
+    background-position: center;
+    background-size: 100% auto;
+    font-size: 19px;
+    padding-top: 10px; 
+} 
+
+.custom-box3 {
+    text-align: center;
+    background-color: #B3D7D1;
+    border: 1px solid #d8dde6;
+    background-repeat:repeat;
+    background-position: center;
+    background-size: 100% auto;
+    font-size: 19px;
+    padding-top: 5px; 
+} 
+
+.custom-box4 {
+    text-align: center;
+    background-color: #D3EEE9;
+    border: 1px solid #d8dde6;
+    background-repeat:repeat;
+    background-position: center;
+    background-size: 100% auto;
+    font-size: 19px;
+    padding-top: 10px; 
+} 
+.custom-box0 {
+    text-align: center;
+    font-size: 12px;
+    padding-top: 5px;
+    font-weight: bold;
+    margin:0 auto;
+    
+  
+} 
+.c-container {
+ 
+   display: grid;
+   grid-gap: 1rem;
+   grid-template-columns:  repeat(4, 200px);   
+   grid-template-rows: repeat(0, 50px);
+}
+
+.c-container0 {
+  
+   display: grid;
+   grid-gap: 1rem;
+   grid-template-columns:  repeat(4, 200px);
+   grid-template-rows: repeat(1, 20px);   
+   
+}
+</style>
+</apex:page>
